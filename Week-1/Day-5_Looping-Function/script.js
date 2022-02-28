@@ -1,4 +1,4 @@
-console.log("fanny");
+console.log("Day 5");
 //Looping
 //for
 for(let i = 0; i>10; i = i + 1){
