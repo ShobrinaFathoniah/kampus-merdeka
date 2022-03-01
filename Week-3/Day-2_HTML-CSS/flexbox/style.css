@@ -1,0 +1,55 @@
+
+/* layouting */
+/* float */
+/* grid */
+/* flexbox */
+/* flexbox digunakan di react native */
+.navbar{
+    background-color: coral;
+    height: 400px;
+    /* width: 350px; */
+    display: flex;
+    /* ud jadi flexobx -> kita bisa ngubah posisi konten */
+    /* justify konten itu horiozntal */
+    /* justify-content: space-between; */
+    /* space-oaround bisa ada jarak kiridan kanan  */
+    /* space-evenly sama persis jarak kanankiri */
+    /* spacebetween untuk tanpa jarak diujung kanan dan kiri */
+    
+    /* aligno item-> vertical */
+    /* start-> atas, end-> bawah */
+    /* align-items: center; */
+
+    /* osamping atau kebawah
+    row-> kesamping, 
+    column-> kebawah (default)
+    row/column reverse -> dibalik*/
+    flex-direction: row;
+    /* justify dan align arahnya mengikuti dg flex direction, 
+    justify konten sesuai arah flex direction, 
+    kalau align item kebalikannya */
+    padding: 10px;
+    /* flex wrap -> dibawahnya kalau gamuat */
+    flex-wrap: wrap;
+}
+
+.kotak{
+    width: 120px;
+    /* height: 30px; */
+    background-color: aqua;
+    /* flex -> bisa dibagi */
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.kotak1{
+    width: 120px;
+    /* height: 30px; */
+    background-color: skyblue;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}

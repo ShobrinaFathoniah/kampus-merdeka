@@ -1,0 +1,35 @@
+h1{
+    color: brown;
+    text-align: center;
+    background-color: darkkhaki;
+    padding: 15px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.item1{
+    flex-grow: 1;
+    padding: 10px;
+    margin: 5px;
+    background-color: coral;
+}
+
+.item2{
+    flex-grow: 1;
+    padding: 10px;
+    margin: 5px;
+    background-color: coral;
+}
+
+.item3{
+    flex-grow: 1;
+    padding: 10px;
+    margin: 5px;
+    background-color: coral;
+}

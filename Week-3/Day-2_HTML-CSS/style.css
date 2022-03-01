@@ -1,0 +1,74 @@
+/* selector -> untuk memilih mau di styling yg masa */
+/* tag  html */
+/* mengubah seluruhnya berubah sesuai dg tag */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2{
+    /* mengubah semua yg ber tag h2 */
+    color: coral;
+}
+
+p{
+    color: darksalmon;
+    word-spacing: 5px;
+}
+
+/* class name */
+.namanya{
+    color: red;
+}
+
+/* id name */
+#list-hobi{
+    list-style: square;
+}
+
+/* sizing */
+/* px, em, rem */
+/* px -> pixel -> menentukan besaran dri sebuah style */
+/* margin dan padding */
+/* dmargin kew luar */
+/* padding ke dalam */
+.kotak{
+    width: 250px;
+    height: 250px;
+    background-color: lightgreen;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    /* kalau text banyak, overflow- > visible keliatan, 
+    scroll/auto -> scrolling, 
+    inherit -> ngikutin parent,
+    initial->default aawal */
+    overflow: auto;
+}
+
+.kotak1{
+    width: 250px;
+    height: 250px;
+    background-color: lightblue;
+    /*  margin 1value -> semuanya
+        margin 2 value -> atasbawah kanankiri
+        margin 3 value -> atas kanankiri bawah
+        margin 4 value -> atas kanan bawah kiri
+        padding juga sama
+    */
+    padding: 15px;
+    margin-top: 10px;
+}
+
+/* border */
+/* batas /ujung perelemen */
+.kotak2{
+    width: 250px;
+    height: 250px;
+    border: 10px;
+    /* border kalau disingkat border: ukuran(cuman bisa satu) type warna */
+    border-style: solid;
+    border-color: rgb(131, 186, 235);
+}
+
