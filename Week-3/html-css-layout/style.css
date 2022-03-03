@@ -1,0 +1,55 @@
+.container{
+    height: auto;
+    width: 900px;
+    margin: 15px;
+    border-radius: 10px;
+    border: 1px;
+    border-style: solid;
+    background-color: wheat;
+    align-content: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: darkcyan;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 15px;
+}
+
+.photo img{
+    width: 150px;
+    height: auto;
+    border: 7px;
+    border-style: solid;
+    border-color: white;
+}
+
+.photo{
+    padding-left: 15px;
+    padding-top: 25px;
+}
+
+.information{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+}
+
+.two-button{
+    padding-left: 15px;
+}
+
+button{
+    padding: 10px;
+    border-radius: 15px;
+    border-style: hidden;
+}
+
+.download{
+    background-color: white;
+}
