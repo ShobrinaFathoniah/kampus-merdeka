@@ -1,0 +1,17 @@
+import SplashImage from './Splash.png'
+import Banner from './Banner.png'
+import Profile from './profile.png'
+import Background from './backgroundHome.png'
+import Kotak from './kotak.png'
+import IconHome from './IconHome.png'
+import IconHomeActive from './IconHomeActive.png'
+import IconBox from './IconBox.png'
+import IconCamera from './IconCamera.png'
+import IconKey from './IconKey.png'
+import IconList from './IconList.png'
+import IconListActive from './IconListActive.png'
+import IconTruck from './IconTruck.png'
+import IconUser from './IconUser.png'
+import IconUserActive from './IconUserActive.png'
+
+export { SplashImage, Banner, Profile, Background, Kotak, IconHome, IconHomeActive, IconBox, IconCamera, IconKey, IconList, IconListActive, IconTruck, IconUser, IconUserActive }
