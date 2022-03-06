@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View , ImageBackground, Dimensions, Image } from 'react-native'
 import React from 'react'
-import { Banner, Background, Profile, Kotak, IconTruck, IconBox, IconKey, IconCamera } from './assets/image/index'
+import { Banner, Background, Profile, Kotak, IconTruck, IconBox, IconKey, IconCamera } from './src/assets/image/index'
 
 const Home = () => {
   return (

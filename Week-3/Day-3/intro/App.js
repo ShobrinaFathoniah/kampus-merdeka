@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View, StatusBar, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, {useState} from 'react'
-import Card from './assets/src/components/Card'
+import Card from './src/components/Card'
 // ../ itu keluar satufolder, ./ berada di satu folder
-import RenderSomeScreens from './assets/src/components/RenderSomeScreens'
-import Perkenalan from './assets/src/components/Perkenalan'
-import Splash from './assets/image/Splash.png'
+import RenderSomeScreens from './src/components/RenderSomeScreens'
+import Perkenalan from './src/components/Perkenalan'
+import Splash from './src/assets/image/Splash.png'
 
 //kalau export hanya pake export tanpa default, saat import perlu menggunakkan {}, nama harus sama persis
 //kalau sudah pake bisa langsung tanpa {}, nama bisa beda
