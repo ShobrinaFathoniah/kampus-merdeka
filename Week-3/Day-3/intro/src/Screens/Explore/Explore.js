@@ -1,14 +1,14 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function Login(props) {
+export default function Explore(props) {
     return (
         <View>
-            <Text>Login</Text>
+            <Text>Explore</Text>
 
-            <TouchableOpacity onPress={() => props.navigation.navigate("Main")}>
+            <TouchableOpacity onPress={() => props.navigation.navigate("Profile")}>
                 <Text>
-                    Goes to Main
+                    Goes to Profile
                 </Text>
             </TouchableOpacity>
         </View>
