@@ -4,7 +4,7 @@ import React from 'react'
 const Register = (props) => {
     return (
         <View>
-            <Text>Register</Text>
+            <Text style={{fontFamily: 'UbuntuMono-Regular'}}>Register</Text>
 
             <TouchableOpacity onPress={() => props.navigation.navigate("Login")}>
                 <Text> Goes to Login</Text>

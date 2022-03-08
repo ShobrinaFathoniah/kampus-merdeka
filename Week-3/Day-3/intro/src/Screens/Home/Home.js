@@ -4,7 +4,7 @@ import React from 'react'
 export default function Home(props) {
     return (
         <View>
-            <Text>Home</Text>
+            <Text style={{fontFamily: 'UbuntuMono-Regular'}}>Home</Text>
 
             <TouchableOpacity onPress={() => props.navigation.navigate("Explore")}>
                 {/* goback lebih dinamis */}

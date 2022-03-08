@@ -11,10 +11,10 @@ const Tab = createBottomTabNavigator()
 
 const BottomTab = () => {
     return(
-        <Tab.Navigator initialRouteName="Home">
-            <Tab.Screen name="Home" component={Home} options={{tabBarIcon: () => <Feather name="home" size={20} color="red" /> }} />
-            <Tab.Screen name="Explore" component={Explore} options={{tabBarIcon: () => <Feather name="search" size={20} color="red" /> }} />
-            <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: () => <Feather name="user" size={20} color="red" /> }} />
+        <Tab.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
+            <Tab.Screen name="Home" component={Home} options={{tabBarIcon: () => <Feather name="home" size={20} color="red" />,  headerShown: false}} />
+            <Tab.Screen name="Explore" component={Explore} options={{tabBarIcon: () => <Feather name="search" size={20} color="red" />,  headerShown: false }} />
+            <Tab.Screen name="Profile" component={Profile} options={{tabBarIcon: () => <Feather name="user" size={20} color="red" />,  headerShown: false }} />
         </Tab.Navigator>
     )
 }

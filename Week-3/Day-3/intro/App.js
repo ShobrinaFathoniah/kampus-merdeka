@@ -82,11 +82,16 @@
 // })
 
 // Day 1 - Week 4
-import React from 'react'
+import React, { useEffect } from 'react'
 import MainRoutes from './src/routers/MainRoutes'
 import { NavigationContainer } from '@react-navigation/native'
+import SplashScreen from 'react-native-splash-screen'
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide()
+  }, []);
+
   return (
     <NavigationContainer>
       <MainRoutes />

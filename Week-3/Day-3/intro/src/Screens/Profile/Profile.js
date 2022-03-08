@@ -4,7 +4,7 @@ import React from 'react'
 export default function Profile(props) {
     return (
         <View>
-            <Text>Profile</Text>
+            <Text style={{fontFamily: 'UbuntuMono-Regular'}}>Profile</Text>
 
             <TouchableOpacity onPress={() => props.navigation.navigate("Register")}>
                 <Text>
