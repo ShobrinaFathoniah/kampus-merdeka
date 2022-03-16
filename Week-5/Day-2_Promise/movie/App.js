@@ -1,11 +1,11 @@
 import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { ACCESS_TOKEN, BASE_URL, ImageUrl } from './src/helpers/apiAccessToken'
+import { ACCESS_TOKEN, BASE_URL, ImageUrl } from '@env'
 
 const App = () => {
   const [listMovie, setListMovie] = useState([])
-  const [title, setTitle] = useState("List Movie")
+  const [title, setTitle] = useState("")
 
   useEffect(() => {
     getPopularMovie()
@@ -46,7 +46,14 @@ const App = () => {
 
   const CardMovie = (({ item }) => {
     return (
-      <View style={{ marginBottom: 10, flexDirection: 'row', alignItems: 'center', borderColor: '#00000026', borderWidth: 1, padding: 10, borderRadius: 5 }}>
+      <View style={{
+        marginBottom: 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderColor: '#00000026',
+        borderWidth: 1, padding: 10,
+        borderRadius: 5
+      }}>
         <Image
           source={{ uri: `${ImageUrl}${item.poster_path}` }}
           style={{ height: 250, width: 150, borderRadius: 5, flex: 1, }}
