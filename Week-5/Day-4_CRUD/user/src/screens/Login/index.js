@@ -37,9 +37,9 @@ const Login = ({ navigation }) => {
 export default Login
 
 //challenge
-// tambah 2 screen ada login + regis kirim api ke fake store api
-// dariregist if 201/200 -> navigate ke login
-//input regis salah alert
-// login if 201/200 ->navigate ke home
-// login validation pk regex 
-// login kalau 400 kasih alert
+// tambah 2 screen ada login + regis kirim api ke fake store api (sudah)
+// dariregist if 201/200 -> navigate ke login (sudah)
+//input login salah alert 
+// login if 201/200 ->navigate ke home(sudah)
+// register validation pk regex password (udah)
+// login kalau 400 kasih alert (sudah)
