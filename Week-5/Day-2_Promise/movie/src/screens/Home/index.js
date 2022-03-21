@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList, Image, BackHandler, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { ACCESS_TOKEN, BASE_URL, ImageUrl } from '@env'
@@ -9,6 +9,28 @@ const Home = () => {
 
   useEffect(() => {
     getPopularMovie()
+  }, [])
+
+  // tombol exit 
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert("Hold on!", "Do you want to exit the application?", [
+        {
+          text: "Cancel",
+          onPress: () => null,
+          style: "cancel"
+        },
+        { text: "YES", onPress: () => BackHandler.exitApp() }
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
   }, [])
 
   const getPopularMovie = async () => {

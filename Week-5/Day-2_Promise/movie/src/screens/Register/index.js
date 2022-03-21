@@ -36,6 +36,20 @@ export default function Register({ navigation }) {
         }
     }
 
+    const emailValidate = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+
+    const checkEmail = email => {
+        if (email) {
+            if (emailValidate.test(email)) {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
+
     const postRegister = async () => {
         try {
             const body = {
@@ -58,28 +72,28 @@ export default function Register({ navigation }) {
                 },
                 phone: phone
             };
-            const res = await axios.post(`${BASE_URL_FAKE}/users`, body, {
-                validateStatus: status => {
-                    if (status < 201 && isValidPassword(password)) {
-                        navigation.navigate('Login')
-                    } else if (status > 201) {
-                        Alert.alert(
-                            "Pemberitahuan",
-                            "Terdapat Kesalahan",
-                            [
-                                {
-                                    text: "Cancel",
-                                    onPress: () => console.log("Cancel Pressed"),
-                                    style: "cancel"
-                                },
-                                { text: "OK", onPress: () => console.log("OK Pressed") }
-                            ]
-                        );
-                    }
-                }
-            });
 
-            console.log(res);
+            if (isValidPassword(password) && checkEmail(email)) {
+                const res = await axios.post(`${BASE_URL_FAKE}/users`, body, {
+                    validateStatus: status => {
+                        if (status < 201) {
+                            navigation.navigate('Login')
+                        } else if (status > 201) {
+                            Alert.alert(
+                                "Pemberitahuan",
+                                "Terdapat Kesalahan"
+                            );
+                        }
+                    }
+                });
+
+                console.log(res);
+            } else {
+                Alert.alert(
+                    "Pemberitahuan",
+                    "Email atau Password Invalid"
+                );
+            }
         } catch (error) {
             console.log(error);
         }
@@ -132,15 +146,6 @@ export default function Register({ navigation }) {
 
             <Button onPress={() => {
                 postRegister();
-                if (isValidPassword(password)) {
-                    navigation.navigate("Login")
-                } else {
-                    Alert.alert(
-                        'Pemberitahuan',
-                        'Passwordmu Tidak Valid'
-                    );
-
-                }
             }} title={'Sign up'} />
         </ScrollView>
     );

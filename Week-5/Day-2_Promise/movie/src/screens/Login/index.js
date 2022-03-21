@@ -20,18 +20,15 @@ export default function Login({ navigation }) {
                 validateStatus: status => {
                     if (status < 201) {
                         navigation.navigate('Home')
-                    } else if (status == 400) {
+                    } else if (status === 400) {
                         Alert.alert(
                             "Pemberitahuan",
-                            "HTTP STATUS 400",
-                            [
-                                {
-                                    text: "Cancel",
-                                    onPress: () => console.log("Cancel Pressed"),
-                                    style: "cancel"
-                                },
-                                { text: "OK", onPress: () => console.log("OK Pressed") }
-                            ]
+                            "HTTP STATUS 400"
+                        );
+                    } else if (status === 401) {
+                        Alert.alert(
+                            "Pemberitahuan",
+                            "Error: Salah Username atau Password"
                         );
                     }
                 }
@@ -39,24 +36,20 @@ export default function Login({ navigation }) {
             console.log(res);
         } catch (error) {
             console.log(error);
-            Alert.alert(
-                'Pemberitahuan',
-                'Tidak dapat melakukan Login'
-            )
         }
     };
 
     return (
         <View>
             <Input placeholder="Username" onChangeText={text => setUsername(text)} />
-            <Input placeholder="Password" onChangeText={text => setPassword(text)} />
+            <Input placeholder="Password" secureTextEntry={true} onChangeText={text => setPassword(text)} />
 
             <Button onPress={() => {
                 postLogin()
             }} title={'Sign in'} />
 
-            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                <Text style={{color: 'blue'}}>Don't have an account? Register now</Text>
+            <TouchableOpacity style={{alignSelf: 'center', marginTop: 10}} onPress={() => navigation.navigate('Register')}>
+                <Text style={{ color: 'blue' }}>Don't have an account? Register now</Text>
             </TouchableOpacity>
         </View>
     );
