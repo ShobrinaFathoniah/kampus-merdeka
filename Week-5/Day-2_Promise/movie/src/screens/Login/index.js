@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import { Input, Button } from 'react-native-elements';
 import axios from 'axios';
-import { BASE_URL2 } from '@env';
+import { BASE_URL_FAKE } from '@env';
 
 export default function Login({ navigation }) {
     const [username, setUsername] = useState('');
@@ -16,14 +16,14 @@ export default function Login({ navigation }) {
                 password: password,
             };
 
-            const res = await axios.post(`${BASE_URL2}/auth/login`, body, {
+            const res = await axios.post(`${BASE_URL_FAKE}/auth/login`, body, {
                 validateStatus: status => {
                     if (status < 201) {
                         navigation.navigate('Home')
                     } else if (status == 400) {
                         Alert.alert(
-                            "Alert Title",
-                            "STATUS SALAH : 400",
+                            "Pemberitahuan",
+                            "HTTP STATUS 400",
                             [
                                 {
                                     text: "Cancel",
@@ -39,6 +39,10 @@ export default function Login({ navigation }) {
             console.log(res);
         } catch (error) {
             console.log(error);
+            Alert.alert(
+                'Pemberitahuan',
+                'Tidak dapat melakukan Login'
+            )
         }
     };
 
@@ -52,7 +56,7 @@ export default function Login({ navigation }) {
             }} title={'Sign in'} />
 
             <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-                <Text>Don't have account yet ?, Register now</Text>
+                <Text style={{color: 'blue'}}>Don't have an account? Register now</Text>
             </TouchableOpacity>
         </View>
     );

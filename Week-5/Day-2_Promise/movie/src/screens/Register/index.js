@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input, Button } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import axios from 'axios';
-import { BASE_URL2 } from '@env';
+import { BASE_URL_FAKE } from '@env';
 import { Alert } from 'react-native';
 
 export default function Register({ navigation }) {
@@ -58,14 +58,14 @@ export default function Register({ navigation }) {
                 },
                 phone: phone
             };
-            const res = await axios.post(`${BASE_URL2}/users`, body, {
+            const res = await axios.post(`${BASE_URL_FAKE}/users`, body, {
                 validateStatus: status => {
                     if (status < 201 && isValidPassword(password)) {
                         navigation.navigate('Login')
                     } else if (status > 201) {
                         Alert.alert(
-                            "Alert Title",
-                            "Kamu Salah",
+                            "Pemberitahuan",
+                            "Terdapat Kesalahan",
                             [
                                 {
                                     text: "Cancel",
@@ -136,16 +136,8 @@ export default function Register({ navigation }) {
                     navigation.navigate("Login")
                 } else {
                     Alert.alert(
-                        "Alert Title",
-                        "Kamu kurang",
-                        [
-                            {
-                                text: "Cancel",
-                                onPress: () => console.log("Cancel Pressed"),
-                                style: "cancel"
-                            },
-                            { text: "OK", onPress: () => console.log("OK Pressed") }
-                        ]
+                        'Pemberitahuan',
+                        'Passwordmu Tidak Valid'
                     );
 
                 }
