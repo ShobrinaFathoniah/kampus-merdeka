@@ -32,12 +32,12 @@ export default function Register({ navigation }) {
                 return true
             }
         } else {
-            return "ERROR: Invalid Type Data"
+            return false
         }
     }
 
+    // email
     const emailValidate = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-
     const checkEmail = email => {
         if (email) {
             if (emailValidate.test(email)) {
@@ -76,7 +76,7 @@ export default function Register({ navigation }) {
             if (isValidPassword(password) && checkEmail(email)) {
                 const res = await axios.post(`${BASE_URL_FAKE}/users`, body, {
                     validateStatus: status => {
-                        if (status < 201) {
+                        if (status <= 201) {
                             navigation.navigate('Login')
                         } else if (status > 201) {
                             Alert.alert(

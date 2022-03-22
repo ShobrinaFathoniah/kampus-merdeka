@@ -1,6 +1,5 @@
 import { View, Text, TouchableOpacity, Alert } from 'react-native';
 import React, { useState } from 'react';
-
 import { Input, Button } from 'react-native-elements';
 import axios from 'axios';
 import { BASE_URL_FAKE } from '@env';
@@ -18,7 +17,7 @@ export default function Login({ navigation }) {
 
             const res = await axios.post(`${BASE_URL_FAKE}/auth/login`, body, {
                 validateStatus: status => {
-                    if (status < 201) {
+                    if (status <= 201) {
                         navigation.navigate('Home')
                     } else if (status === 400) {
                         Alert.alert(
