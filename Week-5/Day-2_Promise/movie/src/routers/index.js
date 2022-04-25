@@ -11,7 +11,11 @@ export default function Routes() {
     <Stack.Navigator initialRouteName="Register">
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="Register" component={Register} />
-      <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }

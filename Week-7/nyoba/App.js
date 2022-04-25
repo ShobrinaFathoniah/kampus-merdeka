@@ -1,14 +1,38 @@
-import {View, Text} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 
-// redux -> untuk memannage state
-//store penyimpanan besar
-//reducer penyimpanan lebih spessifk
+import Home from './src/screens/Home';
+import Profile from './src/screens/Profifle';
+
+import {Provider} from 'react-redux';
+import {store} from './src/store';
 
 export default function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <Provider store={store}>
+      <View flex={1}>
+        <View flex={1}>
+          <Home />
+        </View>
+
+        <View flex={1}>
+          <Profile />
+        </View>
+      </View>
+    </Provider>
   );
 }
+
+// redux
+// adalah tools untuk memanage state
+
+// store
+// adalah tempat penyimpanan yang lebih besar
+
+// reducer
+// adalah tempat penyimpanan yang lebih spesifik
+
+// action
+// setter untuk memberikan nilai ke suatu reducer
+
+// grup movie challenge -> setiap satu screen bikin 1 reducer
